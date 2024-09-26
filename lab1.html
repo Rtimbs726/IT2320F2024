@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <!-- From James: The following HTML was in a different file. You're accessing some
+  of the HTML elements (values and output) using document.writeln(). The trick is
+  you need put those HTML elements before the document.getElementById() statements, or
+  the HTML doesn't exist yet. -->
+  <h1>Lab 1</h1>
+  <h3>Student Name: </h3>
+  <div id="output"></div>
+  Values:<br>
+  <div id="values"></div>
+  Sum:
+  <div id="sum"></div>
+  <!-- From James: Your had src="script.js". By doing this it skipped the code you have in
+  the element on this page. Leave off the script.js if it's "internal" JavaScript like this -->
+  <script>
+    var name = "Ryan Timbs";
+    document.writeln("Lab 1. Completed by " + "Ryan Timbs");
+    console.log("This is Lab 1. Completed by " + "Ryan Timbs");
+     document.getElementById('output').innerHTML = "This is my first JavaScript lab assignment.";
+    for (let i = 1; i <= 10; i++) {
+      document.getElementById('values').innerHTML += i + "<br>";
+    }  
+    let sum = 0;
+    let i = 1;
+    while (i <=10) {
+      sum += i;
+      i++;
+    }
+    let a = 10;
+    let b = 20;
+    let c = 30;
+    document.writeln("The sum of a, b, and c is: " + (a + b + c));
+
+    if (a < b) {
+      document.writeln("a < <b>");
+    } else {
+      document.writeln("a >= b");
+                       }
+    alert("The value of name is: " + name + "\nThe type of name is: " + typeof name);
+  </script>
+</body>
+  
+</html>
