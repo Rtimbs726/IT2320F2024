@@ -11,36 +11,89 @@
 
 <body>
   <h1>Lab 5</h1>
-  <h3>Student Name: </h3>
+  <h3>Student Name: Ryan Timbs</h3>
   
 <b>Problem 1</b><br>
 <script>
 // answer problem 1 here
-
+  class Student {
+    constructor(name, major, gpa, classesTaken){
+      this.name = name;
+      this.major = major;
+      this.gpa = gpa;
+      this.classesTaken = classesTaken;
+    }
+      displayProperties() {
+        document.writeln("Name: " + this.name + "<br>");
+        document.writeln("Major: " + this.major + "<br>");
+        document.writeln("GPA: " + this.gpa + "<br>");
+        document.writeln("Classes Taken: " + this.classesTaken.join(", ") + "<br>");
+      }
+  }
+    let student1 = new Student("Ryan Timbs", "IT Programming and development", "2.95",
+      ["IT1025", "IT1050", "IT1150", "IT2650", "IT2700"]);
+      student1.displayProperties();
 </script>
 
 <hr><b>Problem 2</b><br>
 <script>
 // answer problem 2 here
-
+  let Course = {
+    CourseId: "IT2320", 
+    Title: "IT-2320",
+    CrsDesc: "Interactive Internet Programming",
+    CreditHrs: "4",
+    displayCourse: function() {
+      for (let key in this) {
+        if (typeof this[key] !== 'function') {
+          document.writeln(key + ": " + this[key] + "<br>");
+        }
+      }
+    }
+  }
+  Course.displayCourse();
 </script>
 
-<hr><b>Problem 2</b><br>
+<hr><b>Problem 3</b><br>
 <script>
 // answer problem 3 here
-
+  let planet = {
+    name: 'Mercury', 
+    diameterMiles: 3031.9
+  }
+  planet.millMilesFromEarth = 48;
+  document.writeln("Planet Name: " + planet.name + "<br>");
+  document.writeln("Planet Diameter (miles): " + planet.diameterMiles + "<br>");
+  document.writeln("Planet Distance From Earth (million miles): " + planet.millMilesFromEarth);
 </script>
   
 <hr><b>Problem 4</b><br>
 <script>
 // answer problem 4 here
-  
+    let favoriteLanguages = new Set(["JavaScript", "Python", "Swift", "Dart"]);
+    for(let language of favoriteLanguages){
+      console.log(language);
+    }
 </script>
   
 <hr><b>Problem 5</b><br>
 <script>
 // answer problem 5 here
+    let creditHrs = new Map([
+      ["IT-1025", 3],
+      ["IT-1050", 3],
+      ["IT-2310", 3],
+      ["IT-2320", 4],
+      ["IT-2030", 4],
+      ["IT-2351", 4],
+      ["IT-2650", 4]
+    ]);
 
+    console.log(`Credit hours for IT-2030:  ${creditHrs.get("IT-2030")}`);
+
+    for (let [course, hours] of creditHrs) {
+      console.log(`${course}: ${hours}`);
+    }
 </script>
 
 
