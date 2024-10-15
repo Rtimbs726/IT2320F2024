@@ -10,7 +10,7 @@
 
 <body>
   <h1>Lab 6</h1>
-  <h3>Student Name: </h3>
+  <h3>Student Name: Ryan Timbs</h3>
 
   <div class="problem">
      <b>Problem 1:</b> Update the content of the element id="answer1" using the innerHTML property to display "Lab 6 by " and your name.
@@ -19,7 +19,7 @@
     <div id="answer1"></div>
     <script>
       // Solution for Problem 1 here.
-
+      document.getElementById("answer1").innerHTML = "Lab 6 done by Ryan Timbs";
     </script>
   </div>
   <!-- ----------------------------------------------------------------------------- -->
@@ -32,7 +32,10 @@
     <div class="content">Original Content 3</div><br>
     <script>
       // Solution for Problem 2 here.
-      
+      let contentElements = document.getElementsByClassName("content");
+      for (let i = 0; i < contentElements.length; i++) {
+        contentElements[i].innerHTML = "New Content from Problem 2";
+      }
     </script>
   </div>
   <!-- ----------------------------------------------------------------------------- -->
@@ -46,6 +49,10 @@
     <br>
     <script>
     // Solution for Problem 3 here.
+      const problem3Elements = document.querySelectorAll('.problem3');
+      for (let i = 0; i < problem3Elements.length; i++) {
+        document.writeln(problem3Elements[i].textContent);
+      }
       </script>
   </div>
   <!-- ----------------------------------------------------------------------------- -->
@@ -58,6 +65,8 @@
   <div class="answer">
     <script>
     // Solution for Problem 4 here.
+      var logo = document.getElementById("logo");
+      logo.src = "img/logo2.jpg";
       </script>
   </div>
   <!-- ----------------------------------------------------------------------------- -->
@@ -67,7 +76,9 @@
   <div class="answer">
     <script>
       // Solution for Problem 5 here.
-
+    let newElement = document.createElement('div');
+      newElement.textContent = "Written by Ryan Timbs";
+      document.body.appendChild(newElement);
     </script>
   </div>
 
