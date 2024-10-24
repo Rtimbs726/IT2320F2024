@@ -3,11 +3,40 @@
     <title>Lab 7 - Problem 4</title>
     <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;}</style>
   </head>
+  <script>
+    function validateForm() {
+      const firstName = document.getElementById('firsrName').value;
+      const lastName = document.getElementById('lastName').value;
+      const language = document.getElementById('language').value;
+
+      if (firstName ===""|| lastName ==="") {
+        alert("First and Last Name must be filled out.");
+        return false;
+      }
+      if (language ==="") {
+        alert("Please select your favorite programming language.");
+        return false;
+      }
+      return true;
+    }
+  </script>
   <body>
     <h1>Lab 7 - Problem 4</h1>
-    <form method="POST" action="./index.php">
-      Create an HTML form that accepts first name, last name, and select list with favorite programming languages. In the select list, the first option should be "Select a Favorite Language". Make sure that one of the languages, not this option, is selected before submitting the form. Also, make sure that first and last name are not empty.
-      <br><br>
+    Create an HTML form that accepts first name, last name, and select list with favorite programming languages. In the select list, the first option should be "Select a Favorite Language". Make sure that one of the languages, not this option, is selected before submitting the form. Also, make sure that first and last name are not empty.
+      <br><br> 
+    <form method="POST" action="./index.php" onsubmit="return validateForm()">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required><br><br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required><br><br>
+      <label for="language">Favorite Programming Language:</label>
+      <select id="language" name="language" required>
+        <option value="">Select a Favorite Language</option>
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+      </select><br><br>
       <input type="submit" value="Submit">
     </form>
   </body>
