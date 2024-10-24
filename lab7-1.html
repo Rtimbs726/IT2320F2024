@@ -5,11 +5,7 @@
     <script>
       function validateForm(event) {
         event.preventDefault();
-        
-      
         var nameInput = document.getElementById("name").value;
-        
-    
         if (nameInput.trim() === "") {
           var errorMessage = document.getElementById("error-message");
           errorMessage.textContent = "Name input is required.";
