@@ -2,13 +2,42 @@
   <head>
     <title>Lab 7 - Problem 3</title>
     <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;}</style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          document.querySelector('form').addEventListener('submit', function(event) {
+              const password = document.getElementById('password').value;
+              const requirements = [];
+              if (password.length < 8) {
+                  requirements.push('at least 8 characters');
+              }
+              if (!/[!\[\.]/.test(password)) {
+                  requirements.push('contains one of the following characters: ! [ .');
+              }
+              if (!/[A-Z]/.test(password)) {
+                  requirements.push('at least 1 uppercase letter');
+              }
+              if (!/[a-z]/.test(password)) {
+                  requirements.push('at least 1 lowercase letter');
+              }
+              if (!/[0-9]/.test(password)) {
+                  requirements.push('at least 1 numeric digit');
+              }
+              if (requirements.length > 0) {
+                  event.preventDefault();
+                  const errorMessage = `Password does not meet requirement${requirements.length > 1 ? 's' : ''}: ` + requirements.join(', ') + '.';
+                  alert(errorMessage);
+              }
+          });
+      });
+  </script>
   </head>
   <body>
     <h1>Lab 7 - Problem 3</h1>
     Create a HTML form with a password field and implement JavaScript code to ensure that the password meets certain criteria including: 1) At least 8 characters in length, 2) contains 1 of the following characters ! [ ., 3) has at least 1 uppercase 4) has at least 1 lowercase letter, and 5) contains at least 1 numeric digit. If the password does not meet the criteria, display an error message on the page that says, "Password does not meet requirement: " and display the requirement that it doesn't meet.<br><br>
     <form method="POST" action="./index.php">
-
       <br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
       <input type="submit" value="Submit Password">
     </form>
   </body>
