@@ -9,8 +9,16 @@
 </head>
 
 <body>
-  <h1>Lab 8 - Problem 2</h1>
+  <h1 id="title">Lab 8 - Events</h1>
   
+  <button id="button">Click Me</button>
+  <div id="problem2"></div>
+
+  <script>
+    document.getElementById("button").onclick = function() {
+      document.getElementById("problem2").textContent = "Problem 2 - Button Clicked";
+    };
+  </script>
 </body>
 
 </html>
