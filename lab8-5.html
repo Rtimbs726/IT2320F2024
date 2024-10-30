@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Lab 8 - Problem 5</title>
+  <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;}</style>
+</head>
+
+<body>
+  <h1 id="title">Lab 8 - Events</h1>
+  
+  <button id="button5">Click Me</button>
+  <div id="problem5">Button clicked: 0 times</div>
+
+  <script>
+    let clickCount = 0;
+
+    document.getElementById("button5").onclick = function() {
+      clickCount++; 
+      document.getElementById("problem5").textContent = "Button clicked: " + clickCount + " times";
+    };
+  </script>
+</body>
+
+</html>
