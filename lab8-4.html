@@ -9,8 +9,14 @@
 </head>
 
 <body>
-  <h1>Lab 8 - Problem 4</h1>
-  
+  <h1 id="title">Lab 8 - Events</h1>
+  <p id="paragraph">Click me!</p>
+
+  <script>
+    document.getElementById("paragraph").onclick = function() {
+      alert("Problem 4 - Paragraph Clicked");
+    };
+  </script>
 </body>
 
 </html>
