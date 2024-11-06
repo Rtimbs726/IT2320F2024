@@ -5,12 +5,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Lab 9 - Problem 2</title>
-  <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;} a { font-size:1.2em; }</style>
+  <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;} a { font-size:1.2em; }
+    body {
+      padding: 10px;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #box {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Lab 9 - Problem 2</h1>
   
+
+  <div id="box"></div>
+
+  <script>
+    const box = document.getElementById('box');
+
+    let posX = window.innerWidth - 50;
+    let posY = 0;
+
+    const interval = setInterval (()  => {
+      posX -= 1;
+      posY += 1;
+
+      box.style.left = posX + 'px';
+      box.style.top = posY + 'px';
+
+      if (posX < 0 || posY > window.innerHeight) {
+        clearInterval(interval);
+      }
+    }, 5);
+
+  </script>
 </body>
 
 </html>
