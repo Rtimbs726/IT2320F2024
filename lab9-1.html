@@ -11,6 +11,17 @@
 <body>
   <h1>Lab 9 - Problem 1</h1>
   
+  <p id="text">I can change the color of this sentence to red.</p>
+  <button id="colorChangeButton">Change Text Color</button>
+
+  <script>
+    const button = document.getElementById('colorChangeButton');
+    const paragraph = document.getElementById('text');
+
+    button.addEventListener('click', function() {
+      paragraph.style.color = 'red';
+    });
+  </script>
 </body>
 
 </html>
