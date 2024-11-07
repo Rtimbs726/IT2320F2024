@@ -29,7 +29,6 @@
   <ul id="itemList"></ul>
 
   <script>
-
     const itemInput = document.getElementById('itemInput');
     const addButton = document.getElementById('addButton');
     const removeButton = document.getElementById('removeButton');
@@ -48,7 +47,6 @@
         alert('Please enter a valid item.');
       }
     });
-
     removeButton.addEventListener('click', function() {
       if (itemList.children.length > 0) {
         itemList.removeChild(itemList.lastElementChild);
