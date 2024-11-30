@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Paragraphs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#title').text('Lab 12 - jQuery');
+            $('#toggleButton').click(function() {
+                $('p').toggle();
+            });
+        });
+    </script>
+
+<script>
+    $(document).ready(function() {
+        $('#fadeOutButton').click(function() {
+            $('div').eq(0).fadeOut(1000, function() {
+                $('div').eq(1).fadeOut(1500, function() {
+                    $('div').eq(2).fadeOut(2000);
+                });
+            });
+        });
+    });
+</script>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <h3>Student Name: Ryan Timbs</h3>
+    
+    <button id="toggleButton">Toggle Paragraphs</button>
+    <br/><br/>
+    <p>Paragraph 1</p>
+    <p>Another paragraph</p>
+
+    <button id="fadeOutButton">Fade Out Boxes</button>
+    <br/><br/>
+    
+    <div style="width:80px;height:80px;background-color:red;"></div><br/>
+    <div style="width:80px;height:80px;background-color:green;"></div><br/>
+    <div style="width:80px;height:80px;background-color:blue;"></div>
+</body>
+</html>
